@@ -1,6 +1,6 @@
 [project]
 name = "update-workflows"
-version = "0.1"
+version = "0.2"
 description = "Update GitHub Actions Workflows"
 readme = "README.md"
 authors = [{name = "Simon Willison"}]
