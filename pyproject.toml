@@ -4,7 +4,9 @@ version = "0.1"
 description = "Update GitHub Actions Workflows"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "PyYAML>=6.0",
+]
 
 [project.optional-dependencies]
 test = [
