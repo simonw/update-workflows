@@ -49,10 +49,67 @@ This creates/updates:
 
 ## CLI Options
 
+### Basic Options
+
 ```bash
 # Dry-run mode (shows what would be updated)
 python -m update_workflows --dry-run
-
-# Custom workflows directory
-python -m update_workflows --workflows-dir custom/path
 ```
+
+### Bulk Operations
+
+```bash
+# Process all projects in current directory and subdirectories
+# (finds all directories with .github/workflows.yml)
+python -m update_workflows --all
+
+# Process all projects with dry-run
+python -m update_workflows --all --dry-run
+```
+
+### Git Integration
+
+```bash
+# Update and commit changes with auto-generated message
+python -m update_workflows --commit
+
+# Update, commit, and push changes
+python -m update_workflows --push
+
+# Process all projects, committing and pushing updates
+python -m update_workflows --all --push
+```
+
+The `--commit` option automatically generates commit messages in the format:
+```
+update-workflows: test.yml, publish.yml
+```
+
+The `--push` option implies `--commit`, so you don't need to specify both.
+
+**Note**: You cannot use `--commit` or `--push` with `--dry-run`.
+
+### Example: Bulk Update Multiple Projects
+
+If you have a directory structure like:
+```
+dev/
+  my-project-1/
+    .github/workflows.yml
+    .github/workflows/test.yml
+  my-project-2/
+    .github/workflows.yml
+    .github/workflows/publish.yml
+```
+
+Run this from the `dev/` directory:
+```bash
+cd dev
+python -m update_workflows --all --push
+```
+
+This will:
+1. Find all projects with `.github/workflows.yml`
+2. Update the workflow files in each project
+3. Commit the changes in each project's git repository
+4. Push the commits to each project's remote
