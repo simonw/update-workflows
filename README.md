@@ -1,5 +1,10 @@
 # update-workflows
 
+[![PyPI](https://img.shields.io/pypi/v/update-workflows.svg)](https://pypi.org/project/update-workflows/)
+[![Changelog](https://img.shields.io/github/v/release/simonw/update-workflows?include_prereleases&label=changelog)](https://github.com/simonw/update-workflows/releases)
+[![Tests](https://github.com/simonw/update-workflows/workflows/Test/badge.svg)](https://github.com/simonw/update-workflows/actions?query=workflow%3ATest)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/simonw/update-workflows/blob/master/LICENSE)
+
 Run this tool to update `.github/workflows/*.yml` files based on a configuration file.
 
 ## Usage
