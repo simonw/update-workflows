@@ -117,6 +117,19 @@ def update_workflow_file(file_path: Path, template_reference: str, dry_run: bool
         print(f"  Failed to fetch content, skipping", file=sys.stderr)
         return False
 
+    # Check if file exists and compare content
+    existing_content = None
+    if file_path.exists():
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                existing_content = f.read()
+        except Exception as e:
+            print(f"  Warning: Could not read existing file: {e}", file=sys.stderr)
+
+    if existing_content == remote_content:
+        print(f"  Already up to date")
+        return False
+
     if dry_run:
         print(f"  [DRY RUN] Would update {file_path}")
         return True
