@@ -1,0 +1,13 @@
+[project]
+name = "update-workflows"
+version = "0.1"
+description = "Update GitHub Actions Workflows"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+update-workflows = "update_workflows:main"
+
+[tool.setuptools]
+py-modules = ["update_workflows"]
