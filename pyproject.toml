@@ -3,10 +3,22 @@ name = "update-workflows"
 version = "0.1"
 description = "Update GitHub Actions Workflows"
 readme = "README.md"
+authors = [{name = "Simon Willison"}]
+license = "Apache-2.0"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+]
 requires-python = ">=3.10"
 dependencies = [
     "PyYAML>=6.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/simonw/update-workflows"
+Changelog = "https://github.com/simonw/update-workflows/releases"
+Issues = "https://github.com/simonw/update-workflows/issues"
+CI = "https://github.com/simonw/update-workflows/actions"
 
 [project.optional-dependencies]
 test = [
@@ -19,3 +31,7 @@ update-workflows = "update_workflows:main"
 
 [tool.setuptools]
 py-modules = ["update_workflows"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
